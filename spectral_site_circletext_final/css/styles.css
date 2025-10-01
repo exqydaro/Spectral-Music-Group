@@ -1,0 +1,63 @@
+/* Spectral Music Group — Black & White Landing */
+:root{
+  --bg:#000;
+  --muted:#bfbfbf;
+  --white:#ffffff;
+  --accent:#ffffff;
+  --max-w:1200px;
+  --gap:24px;
+  --logo-size:420px;
+  --corner-pad:28px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Poppins', sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--white);
+  overflow:hidden;
+}
+
+/* header */
+.site-header{position:fixed;inset:0;pointer-events:none}
+.corner{position:fixed;z-index:60;pointer-events:auto}
+.left-top{left:var(--corner-pad);top:var(--corner-pad);}
+.brand{font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;color:var(--white)}
+
+/* main stage */
+.stage{height:100vh;width:100vw;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+
+/* logo */
+.logo-wrap{position:relative;display:flex;align-items:center;justify-content:center}
+.logo{width:var(--logo-size);height:var(--logo-size);object-fit:contain;display:block;}
+
+/* круговой текст */
+.circle-text{position:absolute;width:500px;height:500px;fill:var(--white);font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:3px;animation:spin 30s linear infinite}
+.circle-text text{text-anchor:middle;dominant-baseline:middle}
+@keyframes spin{100%{transform:rotate(360deg)}}
+
+/* panels */
+.panel{background:transparent;color:var(--muted);font-size:14px;line-height:1.5;padding:18px;border-radius:8px}
+.panel h2{color:var(--white);font-size:16px;margin-bottom:10px}
+.panel ul{padding-left:16px;margin-top:6px}
+.panel li{margin-bottom:8px}
+
+/* contact list */
+.contact-list a{color:var(--white);text-decoration:none;font-weight:700;display:inline-block;margin-bottom:8px}
+.contact-list a:hover{text-decoration:underline}
+
+/* footer */
+.site-footer{position:fixed;left:0;right:0;bottom:8px;text-align:center;color:rgba(255,255,255,0.12);font-size:13px;pointer-events:none;z-index:10}
+
+/* responsive */
+@media (max-width:900px){
+  :root{--logo-size:300px}
+  .left-bottom{max-width:90vw}
+  .right-bottom{max-width:90vw;right:12px}
+  body{overflow:auto}
+  .site-footer{position:static;margin-top:20px;pointer-events:auto}
+}
